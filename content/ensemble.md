@@ -19,6 +19,55 @@ note = "Fondatrice de l'ensemble en 2004 et directrice."
 nom = "Vincent Bénard"
 pupitre = "Instrumentistes"
 note = "Organiste et continuiste."
+
+[[extra.membres]]
+nom = "Isabelle Rieu"
+pupitre = "Soprano"
+
+[[extra.membres]]
+nom = "Cécile Rouselle"
+pupitre = "Soprano"
+
+[[extra.membres]]
+nom = "Anne"
+pupitre = "Soprano"
+
+[[extra.membres]]
+nom = "Daniele Mallet"
+pupitre = "Alto"
+
+[[extra.membres]]
+nom = "Gragou"
+pupitre = "Alto"
+
+[[extra.membres]]
+nom = "Marie-Claire"
+pupitre = "Alto"
+
+[[extra.membres]]
+nom = "Vincent Bourdin"
+pupitre = "Ténor"
+
+[[extra.membres]]
+nom = "Brice Poizeau"
+pupitre = "Ténor"
+
+[[extra.membres]]
+nom = "Roger Cazabon"
+pupitre = "Basse"
+
+[[extra.membres]]
+nom = "Bernard"
+pupitre = "Basse"
+
+[[extra.membres]]
+nom = "Laurent Nguyen"
+pupitre = "Basse"
+
+# Section « Ils sont passés chez nous » (affichée seulement si elle contient des noms) :
+# [[extra.passes]]
+# nom = "Prénom Nom"
+# note = "facultatif"
 +++
 
 Une douzaine de chanteurs environ, répartis en quatre pupitres, jamais plus de quatre par voix.

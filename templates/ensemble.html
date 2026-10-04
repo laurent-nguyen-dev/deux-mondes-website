@@ -7,14 +7,14 @@
   <h1>{{ page.title }}</h1>
   {{ page.content | safe }}
 
-  {# Les membres sont listés dans le front matter de content/ensemble.md, groupés par pupitre. #}
+  {# Les membres sont listés dans le front matter de content/ensemble.md. #}
   {% if page.extra.membres %}
-    {% set groupes = ["Direction", "Soprano", "Alto", "Ténor", "Basse", "Instrumentistes"] %}
-    {% for g in groupes %}
+    {# Direction, puis chanteurs (par pupitre), puis instrumentistes #}
+    {% for g in ["Direction"] %}
       {% set_global n = 0 %}
       {% for m in page.extra.membres %}{% if m.pupitre == g %}{% set_global n = n + 1 %}{% endif %}{% endfor %}
       {% if n > 0 %}
-        <h2>{{ g }}</h2>
+        <h2>Direction</h2>
         <ul class="membres">
           {% for m in page.extra.membres %}{% if m.pupitre == g %}
             <li><strong>{{ m.nom }}</strong>{% if m.note %} <span class="note">{{ m.note }}</span>{% endif %}</li>
@@ -22,6 +22,51 @@
         </ul>
       {% endif %}
     {% endfor %}
+
+    {% set pupitres = ["Soprano", "Alto", "Ténor", "Basse"] %}
+    {% set_global chanteurs = 0 %}
+    {% for m in page.extra.membres %}{% if m.pupitre in pupitres %}{% set_global chanteurs = chanteurs + 1 %}{% endif %}{% endfor %}
+    {% if chanteurs > 0 %}
+      <h2>Chanteurs</h2>
+      <div class="pupitres">
+        {% for g in pupitres %}
+          {% set_global n = 0 %}
+          {% for m in page.extra.membres %}{% if m.pupitre == g %}{% set_global n = n + 1 %}{% endif %}{% endfor %}
+          {% if n > 0 %}
+            <div class="pupitre">
+              <h3>{{ g }}</h3>
+              <ul class="membres compact">
+                {% for m in page.extra.membres %}{% if m.pupitre == g %}
+                  <li>{{ m.nom }}{% if m.note %} <span class="note">{{ m.note }}</span>{% endif %}</li>
+                {% endif %}{% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% for g in ["Instrumentistes"] %}
+      {% set_global n = 0 %}
+      {% for m in page.extra.membres %}{% if m.pupitre == g %}{% set_global n = n + 1 %}{% endif %}{% endfor %}
+      {% if n > 0 %}
+        <h2>Instrumentistes</h2>
+        <ul class="membres">
+          {% for m in page.extra.membres %}{% if m.pupitre == g %}
+            <li><strong>{{ m.nom }}</strong>{% if m.note %} <span class="note">{{ m.note }}</span>{% endif %}</li>
+          {% endif %}{% endfor %}
+        </ul>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% if page.extra.passes %}
+    <h2>Ils sont passés chez nous</h2>
+    <ul class="membres compact">
+      {% for m in page.extra.passes %}
+        <li>{{ m.nom }}{% if m.note %} <span class="note">{{ m.note }}</span>{% endif %}</li>
+      {% endfor %}
+    </ul>
   {% endif %}
 </section>
 {% endblock content %}
