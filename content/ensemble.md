@@ -25,7 +25,7 @@ nom = "Isabelle Rieu"
 pupitre = "Soprano"
 
 [[extra.membres]]
-nom = "Cécile Rouselle"
+nom = "Cécile Roussel"
 pupitre = "Soprano"
 
 [[extra.membres]]
@@ -70,4 +70,4 @@ pupitre = "Basse"
 # note = "facultatif"
 +++
 
-Une douzaine de chanteurs environ, répartis en quatre pupitres, jamais plus de quatre par voix.
+Une douzaine de chanteurs environ, répartis en quatre pupitres, jamais plus de quatre par voix. L'ensemble est réparti entre deux régions : la Bretagne et l'Île-de-France.

@@ -250,3 +250,9 @@ body::before {
   opacity: .13; filter: sepia(.45);
 }
 .site-footer .credit { font-size: .75rem; opacity: .85; }
+
+/* Page Ensemble : carte du nord-ouest de la France en fond, transparente (Bretagne et Île-de-France colorées). */
+.prose.ensemble { position: relative; }
+.prose.ensemble > *:not(.carte) { position: relative; z-index: 1; }
+.prose.ensemble .carte { position: absolute; z-index: 0; top: 2rem; right: -3rem; width: min(100%, 44rem); height: auto; opacity: .6; pointer-events: none; }
+@media (max-width: 40rem) { .prose.ensemble .carte { right: -1rem; width: 100%; opacity: .4; } }
