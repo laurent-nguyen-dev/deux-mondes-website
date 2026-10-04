@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="{% if current_path == "/" %}home{% else %}page{% endif %}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,10 +24,11 @@
     <p class="slogan">{{ home.extra.slogan }}</p>
   </header>
 
-  {% include "partials/garden.html" %}
+  <div class="stage">
+    {% include "partials/garden.html" %}
+  </div>
 
   <main id="contenu" class="panel" tabindex="-1">
-    <a class="back-top" href="#scene">↑ Les fleurs</a>
     {% block content %}{% endblock content %}
   </main>
 

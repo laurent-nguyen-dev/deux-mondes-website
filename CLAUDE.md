@@ -14,8 +14,8 @@ On parle français avec l'utilisateur. Le texte du site est en français.
 ## Structure
 
 - `config.toml` : titre, description, `[extra]` (email, adresse, réseaux sociaux). `base_url` locale ; le workflow la remplace.
-- `content/_index.md` : présentation (page d'accueil). `content/repertoire.md` : compositeurs. `content/contact.md`, `content/galerie/_index.md` (photos déposées dans ce dossier, vidéos YouTube dans le front matter), `content/concerts/` (un `.md` par concert : `date`, `extra.heure`, `extra.lieu`).
-- `templates/` : `base.html` (titre, scène, panneau, pied de page), `index.html`, `page.html`, `concerts.html` (classement automatique à venir / passés), `galerie.html`, `contact.html`, `partials/concert.html`, `partials/garden.html` (la scène, voir plus bas).
+- `content/_index.md` : accueil (seulement le slogan en front matter : l'accueil n'a pas de texte). `content/ensemble.md` : présentation. `content/repertoire.md` : compositeurs. `content/contact.md`, `content/galerie/_index.md` (photos déposées dans ce dossier, vidéos YouTube dans le front matter), `content/concerts/` (un `.md` par concert : `date`, `extra.heure`, `extra.lieu`).
+- `templates/` : `base.html` (titre, `.stage` > scène, panneau `#contenu`, pied de page ; la classe `home`/`page` de `<html>` vient de `current_path`), `index.html` (vide), `page.html`, `concerts.html` (classement automatique à venir / passés), `galerie.html`, `contact.html`, `partials/concert.html`, `partials/garden.html` (la scène, voir plus bas).
 - `static/css/style.css` (variables de couleur en tête de fichier), `static/js/main.js`.
 - `.screenshots/` : captures et fichiers de travail, **ignorés par git**.
 
@@ -25,7 +25,11 @@ Une scène de **lianes qui sont des liens entre les deux mondes** : Amérique du
 
 - **Fleurs européennes = navigation** (cliquables) : lys/France = L'ensemble, rose du XV d'Angleterre/Angleterre = Concerts, bleuet/Allemagne = Galerie, œillet/Espagne = Contact.
 - **Passiflore (Amérique du Sud) = Répertoire** (cliquable). Dahlia, cantuta et cattleya : **décoratives** pour l'instant, destinées à de futures sections.
-- Cliquer une fleur affiche la page **dans le panneau du bas**, sans recharger la scène (`main.js`, `fetch` + `pushState`). Sans JavaScript, les fleurs restent de vrais liens.
+- **Deux états**, via `html.home` / `html.page` :
+  - **Accueil** (`/`) : seulement le titre, le dessin (qui tient dans l'écran, sans défilement) et un pied de page compact sur une ligne (email, réseaux, ©) pour les mentions habituelles. Le panneau de texte est masqué.
+  - **Page** : cliquer une fleur **miniaturise le dessin** (animation FLIP en JS) à un endroit **aléatoire** : un des 4 coins en position fixe sur grand écran (≥ 82rem), ou à gauche/centre/droite du bandeau du haut sinon, avec une légère inclinaison. Le texte s'affiche en dessous. **Cliquer la miniature (`a.garden-home`) ramène à l'accueil.** Les fleurs de la miniature ne sont plus cliquables.
+  - Chargement sans recharger la scène (`main.js` : `fetch` + `pushState`, animation sautée si `prefers-reduced-motion`). Sans JavaScript, les fleurs restent de vrais liens (la miniature est alors en haut à gauche).
+- Le lys (« L'ensemble ») mène à `/ensemble/`, la présentation (qui n'est plus l'accueil).
 - Mise en page **adaptative** : grande disposition (viewBox 1000×600) et disposition **portrait** pour téléphone (viewBox 600×780, `max-width: 40rem`). Les deux SVG sont dans `garden.html`, les positions des fleurs en variables CSS (`--x/--y` et `--tx/--ty`). Le texte grossit sur très grand écran (`html { font-size: max(100%, .9vw) }`) pour une télé.
 - `partials/garden.html` a été **généré par un script** (non conservé) à partir de géométrie Bézier et de contours Natural Earth. Aujourd'hui on le **modifie à la main** ; vérifier les deux dispositions après toute modification.
 
@@ -47,7 +51,7 @@ Une scène de **lianes qui sont des liens entre les deux mondes** : Amérique du
 
 Google Chrome est installé. Captures en tâche de fond :
 `google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars --virtual-time-budget=8000 --window-size=1440,900 --screenshot=.screenshots/x.png http://127.0.0.1:1111/`
-Tailles utiles : 390×1000 (téléphone), 820×1180 (tablette), 1440×900, 3840×2160 (télé). Le `scroll-behavior: smooth` bloque `--virtual-time-budget` : pour tester les clics, lancer Chrome en temps réel avec une page de test qui envoie ses résultats à un petit serveur local (puis supprimer la page de test).
+Tailles utiles : 390×844 (téléphone), 820×1180 (tablette), 1440×900, 3840×2160 (télé). Le `scroll-behavior: smooth` bloque `--virtual-time-budget` : pour tester les clics, lancer Chrome en temps réel avec une page de test qui envoie ses résultats à un petit serveur local (puis supprimer la page de test).
 
 ## Sécurité
 

@@ -1,8 +1,4 @@
 {% extends "base.html" %}
 
-{% block content %}
-<section class="container prose">
-  <h1>{{ section.title }}</h1>
-  {{ section.content | safe }}
-</section>
-{% endblock content %}
+{# L'accueil n'affiche que la scène des lianes : le panneau du bas reste vide (et masqué en CSS). #}
+{% block content %}{% endblock content %}
