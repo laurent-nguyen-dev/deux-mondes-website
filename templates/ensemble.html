@@ -5,7 +5,11 @@
 {% block content %}
 <section class="container prose ensemble">
   {# Carte en fond (transparente) : l'ensemble est réparti entre la Bretagne et l'Île-de-France. #}
-  <img class="carte" src="{{ get_url(path='images/carte-nord-ouest.svg') }}" alt="Carte du nord-ouest de la France : la Bretagne et l'Île-de-France sont colorées, les deux régions où l'ensemble est réparti.">
+  <div class="carte-wrap">
+    <img class="carte" src="{{ get_url(path='images/carte-nord-ouest.svg') }}" alt="Carte du nord-ouest de la France : la Bretagne et l'Île-de-France sont colorées, les deux régions où l'ensemble est réparti.">
+    <img class="drapeau" style="left:20.9%;top:77.6%;width:16.5%" src="{{ get_url(path='images/drapeau-bretagne.svg') }}" alt="Drapeau de la Bretagne (Gwenn ha du)">
+    <img class="drapeau" style="left:76.8%;top:64.6%;width:13.6%" src="{{ get_url(path='images/drapeau-ile-de-france.svg') }}" alt="Drapeau culturel de l'Île-de-France">
+  </div>
   <h1>{{ page.title }}</h1>
   {{ page.content | safe }}
 

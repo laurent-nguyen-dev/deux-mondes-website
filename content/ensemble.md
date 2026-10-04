@@ -1,5 +1,5 @@
 +++
-title = "Ensemble"
+title = "Ensemble vocal"
 template = "ensemble.html"
 
 # Pour ajouter un membre : copier un bloc [[extra.membres]] et remplir ses champs.
@@ -70,4 +70,4 @@ pupitre = "Basse"
 # note = "facultatif"
 +++
 
-Une douzaine de chanteurs environ, répartis en quatre pupitres, jamais plus de quatre par voix. L'ensemble est réparti entre deux régions : la Bretagne et l'Île-de-France.
+Une douzaine de chanteurs environ, répartis en quatre pupitres, jamais plus de quatre par voix. Comme son nom l'indique, l'ensemble vit entre deux mondes : ses chanteurs sont répartis entre deux régions, la Bretagne et l'Île-de-France.

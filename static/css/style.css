@@ -254,5 +254,7 @@ body::before {
 /* Page Ensemble : carte du nord-ouest de la France en fond, transparente (Bretagne et Île-de-France colorées). */
 .prose.ensemble { position: relative; }
 .prose.ensemble > *:not(.carte) { position: relative; z-index: 1; }
-.prose.ensemble .carte { position: absolute; z-index: 0; top: 2rem; right: -3rem; width: min(100%, 44rem); height: auto; opacity: .6; pointer-events: none; }
-@media (max-width: 40rem) { .prose.ensemble .carte { right: -1rem; width: 100%; opacity: .4; } }
+.prose.ensemble .carte-wrap { position: absolute; z-index: 0; top: 2rem; right: -3rem; width: min(100%, 44rem); pointer-events: none; }
+.prose.ensemble .carte { display: block; width: 100%; height: auto; opacity: .6; }
+.prose.ensemble .drapeau { position: absolute; height: auto; opacity: .4; transform: rotate(-4deg); outline: 1px solid rgba(0, 0, 0, .12); }
+@media (max-width: 40rem) { .prose.ensemble .carte-wrap { right: -1rem; width: 100%; } .prose.ensemble .carte { opacity: .4; } .prose.ensemble .drapeau { opacity: .32; } }
