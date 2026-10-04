@@ -2,9 +2,10 @@
 title = "Cheffe de chœur"
 template = "portrait.html"
 
-[extra]
-alt = "Marie-Renée Cazabon, cheffe de chœur"
-credit = "Photo : Le Télégramme"
+# Pour afficher un portrait : déposer l'image dans ce dossier (content/cheffe-de-choeur/) et décommenter :
+# [extra]
+# alt = "Marie-Renée Cazabon, cheffe de chœur"
+# credit = "Photo : ..."
 +++
 
 **Marie-Renée Cazabon** a fondé l'Ensemble vocal des deux mondes en 2004 et le dirige depuis.
