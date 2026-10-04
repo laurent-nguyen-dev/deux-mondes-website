@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} – {{ config.title }}{% endblock title %}
+
+{% block content %}
+<section class="container prose">
+  <h1>{{ page.title }}</h1>
+  {{ page.content | safe }}
+
+  {# Les membres sont listés dans le front matter de content/ensemble.md, groupés par pupitre. #}
+  {% if page.extra.membres %}
+    {% set groupes = ["Direction", "Soprano", "Alto", "Ténor", "Basse", "Instrumentistes"] %}
+    {% for g in groupes %}
+      {% set_global n = 0 %}
+      {% for m in page.extra.membres %}{% if m.pupitre == g %}{% set_global n = n + 1 %}{% endif %}{% endfor %}
+      {% if n > 0 %}
+        <h2>{{ g }}</h2>
+        <ul class="membres">
+          {% for m in page.extra.membres %}{% if m.pupitre == g %}
+            <li><strong>{{ m.nom }}</strong>{% if m.note %} <span class="note">{{ m.note }}</span>{% endif %}</li>
+          {% endif %}{% endfor %}
+        </ul>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</section>
+{% endblock content %}

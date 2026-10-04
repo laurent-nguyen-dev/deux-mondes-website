@@ -1,9 +1,24 @@
 +++
-title = "Présentation"
+title = "Ensemble"
+template = "ensemble.html"
+
+# Pour ajouter un membre : copier un bloc [[extra.membres]] et remplir ses champs.
+# `pupitre` : Direction, Soprano, Alto, Ténor, Basse ou Instrumentistes. `note` est facultatif.
+# Exemple :
+# [[extra.membres]]
+# nom = "Prénom Nom"
+# pupitre = "Soprano"
+# note = "Depuis 2010"
+
+[[extra.membres]]
+nom = "Marie-Renée Cazabon"
+pupitre = "Direction"
+note = "Fondatrice de l'ensemble en 2004 et directrice."
+
+[[extra.membres]]
+nom = "Vincent Bénard"
+pupitre = "Instrumentistes"
+note = "Organiste et continuiste."
 +++
 
-L'Ensemble vocal des deux mondes est un petit groupe à géométrie variable : une douzaine de chanteurs environ, répartis en quatre pupitres (soprano, alto, ténor, basse), **jamais plus de quatre chanteurs par voix**. Cet effectif permet de chanter dans la clarté et la transparence qu'exige la musique baroque.
-
-Son nom dit son répertoire : celui du **baroque européen**, et celui, moins souvent entendu, du **baroque d'Amérique du Sud**, né de l'inspiration de la musique européenne traversée par l'Atlantique. Deux mondes, une même époque, que nous faisons dialoguer au fil des concerts : de la Renaissance au XVIIIe siècle, des chansons françaises de la Renaissance, des motets allemands et anglais, des villancicos espagnols, et la musique des missions du Pérou et du Brésil et de Cuba coloniaux.
-
-Fondé en 2004 par Marie Renée Cazabon, qui le dirige, l'ensemble se produit en région parisienne et en Bretagne. Il travaille avec des instrumentistes, notamment l'organiste et continuiste Vincent Bénard, et collabore avec l'ensemble Baroquerie du Val de Bièvre.
+Une douzaine de chanteurs environ, répartis en quatre pupitres, jamais plus de quatre par voix.
