@@ -10,8 +10,8 @@ build_search_index = false
 
 [extra]
 # Coordonnées affichées sur la page Contact et dans le pied de page.
-email = "contact@exemple.fr"
-adresse = "Ensemble vocal des deux mondes, 1 rue Exemple, 75000 Ville"
+email = "lavoixetlesdoigts@gmail.com"
+adresse = "La Voix et Les Doigts, 7 lieu-dit Kermenguy, 22160 Calanhel"
 facebook = "https://www.facebook.com/"
 instagram = "https://www.instagram.com/"
 youtube = "https://www.youtube.com/"
