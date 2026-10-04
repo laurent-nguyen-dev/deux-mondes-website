@@ -57,9 +57,10 @@ a:hover { color: var(--gold); }
   transform: translate(-50%, -50%); text-decoration: none; color: var(--text);
   opacity: 0; animation: bloom .5s cubic-bezier(.2, 1.4, .4, 1) forwards; animation-delay: 1s;
 }
-.flower:nth-child(2) { animation-delay: 1.25s; }
-.flower:nth-child(3) { animation-delay: 1.3s; }
-.flower:nth-child(4) { animation-delay: 1.35s; }
+.flower:nth-child(2) { animation-delay: 1.1s; }
+.flower:nth-child(3) { animation-delay: 1.25s; }
+.flower:nth-child(4) { animation-delay: 1.3s; }
+.flower:nth-child(5) { animation-delay: 1.35s; }
 @keyframes bloom { from { opacity: 0; transform: translate(-50%, -50%) scale(.2); } to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
 .flower svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .25)); transition: transform .25s; }
 .bloom { transform-origin: 0 0; animation: sway 7s ease-in-out infinite alternate; }
@@ -167,5 +168,6 @@ dialog#lightbox img { display: block; max-width: 96vw; max-height: 92vh; border-
   .deco { left: var(--tx); top: var(--ty); width: 17%; }
   .flower .flower-label, .flower.label-side .flower-label, .flower.label-top .flower-label {
     top: auto; bottom: 94%; left: 50%; right: auto; transform: translateX(-50%); margin: 0; }
+  .flower.label-right .flower-label { top: 42%; bottom: auto; left: 96%; right: auto; transform: translateY(-50%); }
   .geo-eu { top: auto; bottom: 1%; }
 }
