@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+  <h1>{{ config.title }}</h1>
+  <p>{{ section.extra.slogan }}</p>
+  <a class="button" href="{{ get_url(path='concerts') }}">Prochains concerts</a>
+</section>
+
+<section class="container">
+  <h2>{{ section.title }}</h2>
+  {{ section.content | safe }}
+</section>
+{% endblock content %}

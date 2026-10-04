@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} – {{ config.title }}{% endblock title %}
+
+{% block content %}
+<section class="container">
+  <h2>{{ page.title }}</h2>
+  {{ page.content | safe }}
+  <ul class="contact-list">
+    <li><strong>Email :</strong> <a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a></li>
+    <li><strong>Adresse postale :</strong> {{ config.extra.adresse }}</li>
+    <li><strong>Réseaux sociaux :</strong>
+      <a href="{{ config.extra.facebook }}" rel="noopener">Facebook</a> ·
+      <a href="{{ config.extra.instagram }}" rel="noopener">Instagram</a> ·
+      <a href="{{ config.extra.youtube }}" rel="noopener">YouTube</a>
+    </li>
+  </ul>
+</section>
+{% endblock content %}

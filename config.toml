@@ -1,0 +1,17 @@
+# Adresse finale du site (à adapter lors de la mise en ligne).
+# Pour GitHub Pages : "https://<utilisateur>.github.io/<depot>"
+base_url = "http://127.0.0.1:1111"
+title = "Chorale Deux Mondes"
+description = "Chorale Deux Mondes : présentation, agenda des concerts, photos et vidéos."
+default_language = "fr"
+
+compile_sass = false
+build_search_index = false
+
+[extra]
+# Coordonnées affichées sur la page Contact et dans le pied de page.
+email = "contact@exemple.fr"
+adresse = "Chorale Deux Mondes, 1 rue Exemple, 75000 Ville"
+facebook = "https://www.facebook.com/"
+instagram = "https://www.instagram.com/"
+youtube = "https://www.youtube.com/"

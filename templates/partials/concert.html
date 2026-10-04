@@ -1,0 +1,6 @@
+<li class="concert">
+  <p class="concert-date">{{ page.date | date(format="EEEE d MMMM y", locale="fr_FR") }}{% if page.extra.heure %} · {{ page.extra.heure }}{% endif %}</p>
+  <p class="concert-title">{{ page.title }}</p>
+  {% if page.extra.lieu %}<p class="concert-place">{{ page.extra.lieu }}</p>{% endif %}
+  {% if page.content %}<div class="concert-desc">{{ page.content | safe }}</div>{% endif %}
+</li>

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} – {{ config.title }}{% endblock title %}
+
+{% block content %}
+{# Le classement « à venir / passés » est automatique, selon la date du jour de la construction du site. #}
+{% set today = now() | date(format="%Y-%m-%d") %}
+<section class="container">
+  <h2>{{ section.title }}</h2>
+
+  <h3>À venir</h3>
+  <ul class="concert-list">
+    {% set found = false %}
+    {% for page in section.pages | reverse %}
+      {% if page.date >= today %}
+        {% set_global found = true %}
+        {% include "partials/concert.html" %}
+      {% endif %}
+    {% endfor %}
+    {% if not found %}<li class="empty">Aucun concert programmé pour le moment.</li>{% endif %}
+  </ul>
+
+  <h3>Passés</h3>
+  <ul class="concert-list">
+    {% set found = false %}
+    {% for page in section.pages %}
+      {% if page.date < today %}
+        {% set_global found = true %}
+        {% include "partials/concert.html" %}
+      {% endif %}
+    {% endfor %}
+    {% if not found %}<li class="empty">Aucun concert passé.</li>{% endif %}
+  </ul>
+</section>
+{% endblock content %}
