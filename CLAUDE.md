@@ -21,7 +21,7 @@ On parle français avec l'utilisateur. Le texte du site est en français.
 
 ## Le concept visuel (à respecter)
 
-Une scène de **lianes qui sont des liens entre les deux mondes** : Amérique du Sud à gauche, Europe à droite. Chaque liane relie une fleur sud-américaine à une fleur européenne, avec des segments en **escaliers incas** (ocre). Les silhouettes des deux continents sont en fond, très pâles.
+Une scène de **lianes qui sont des liens entre les deux mondes** : Amérique du Sud à gauche, Europe à droite. Chaque liane relie une fleur sud-américaine à une fleur européenne, avec des segments en **escaliers incas** (ocre). Les silhouettes des deux continents sont en fond, très pâles. Le décor dit **« chant choral »** (et non « jardin ») : les feuilles sont des **notes** (noires, croches, croches liées), une **portée avec clé d'ut** traverse l'Atlantique, et le fond de page est la **première page autographe du Kyrie de la Messe en si mineur de J.-S. Bach** (`static/images/manuscrit-bach-kyrie.jpg`, domaine public via IMSLP/Wikimedia Commons, très pâle ; crédit dans le pied de page). **Pas de son** : l'utilisateur trouve cela kitsch. Pas de clé de sol (cliché).
 
 - **Fleurs européennes = navigation** (cliquables) : lys/France = Présentation (`/presentation/`), rose du XV d'Angleterre/Angleterre = Concerts, bleuet/Allemagne = Galerie, œillet/Espagne = Contact.
 - **Fleurs d'Amérique du Sud cliquables** : cantuta = Ensemble (`/ensemble/`, liste des membres, pilotée par le front matter `extra.membres` de `content/ensemble.md`), dahlia = Cheffe de chœur (`/cheffe-de-choeur/`, Marie-Renée Cazabon : graphie avec trait d'union), passiflore = Répertoire. La **cattleya** reste **décorative**, pour une future section.

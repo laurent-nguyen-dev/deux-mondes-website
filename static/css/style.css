@@ -236,3 +236,17 @@ html.page .panel { margin-top: 1rem; }
 .pupitres { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: 0 1.5rem; }
 .prose h3 { margin: 1.5rem 0 .4rem; font-size: 1.15rem; font-weight: 600; color: var(--accent); }
 .membres.compact li { padding: .25rem 0; border-bottom: 0; }
+
+/* Notes (à la place des feuilles), portée et fond de manuscrit */
+.note-g .head, .note-g .flag, .note-g .beam { fill: var(--accent); }
+.note-g .stem { stroke: var(--accent); stroke-width: 2.2; fill: none; }
+.staff line { stroke: var(--text); stroke-opacity: .3; stroke-width: 1.4; }
+.staff rect { fill: var(--text); fill-opacity: .32; }
+.staff .clef-c { fill: none; stroke: var(--text); stroke-opacity: .34; stroke-width: 3.2; stroke-linecap: round; }
+/* Fond : première page autographe du Kyrie de la Messe en si mineur de J.-S. Bach (domaine public). */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: url("../images/manuscrit-bach-kyrie.jpg") center 34% / cover no-repeat;
+  opacity: .13; filter: sepia(.45);
+}
+.site-footer .credit { font-size: .75rem; opacity: .85; }
