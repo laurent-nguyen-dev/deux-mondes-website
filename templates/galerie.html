@@ -4,23 +4,23 @@
 
 {% block content %}
 <section class="container">
-  <h2>{{ section.title }}</h2>
+  <h1>{{ section.title }}</h1>
   {{ section.content | safe }}
 
-  <h3>Photos</h3>
-  {# Toute image déposée dans content/galerie/ apparaît ici automatiquement. #}
+  <h2>Photos</h2>
+  {# Toute image déposée dans content/galerie/ apparaît ici automatiquement ; un clic l'agrandit. #}
   <div class="gallery">
     {% set_global count = 0 %}
     {% for asset in section.assets %}
       {% if asset is matching(pat="[.](jpg|jpeg|png|webp|gif)$") %}
         {% set_global count = count + 1 %}
-        <figure><img src="{{ asset }}" alt="Photo de la chorale" loading="lazy"></figure>
+        <a href="{{ asset }}" class="gallery-item"><img src="{{ asset }}" alt="Photo de l'ensemble" loading="lazy"></a>
       {% endif %}
     {% endfor %}
     {% if count == 0 %}<p class="empty">Photos à venir.</p>{% endif %}
   </div>
 
-  <h3>Vidéos</h3>
+  <h2>Vidéos</h2>
   <div class="videos">
     {% if section.extra.videos %}
       {% for video in section.extra.videos %}
@@ -31,4 +31,9 @@
     {% endif %}
   </div>
 </section>
+
+<dialog id="lightbox" aria-label="Photo agrandie">
+  <form method="dialog"><button class="lightbox-close" aria-label="Fermer">×</button></form>
+  <img alt="">
+</dialog>
 {% endblock content %}

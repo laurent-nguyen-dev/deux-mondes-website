@@ -1,14 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="hero">
-  <h1>{{ config.title }}</h1>
-  <p>{{ section.extra.slogan }}</p>
-  <a class="button" href="{{ get_url(path='concerts') }}">Prochains concerts</a>
-</section>
+{% set today = now() | date(format="%Y-%m-%d") %}
+{% set concerts = get_section(path="concerts/_index.md") %}
 
-<section class="container">
-  <h2>{{ section.title }}</h2>
+{# Le prochain concert est trouvé automatiquement : le plus proche à partir d'aujourd'hui. #}
+{% set_global next = false %}
+{% for page in concerts.pages | reverse %}
+  {% if not next and page.date >= today %}{% set_global next = page %}{% endif %}
+{% endfor %}
+
+<section class="container prose">
+  <h1>{{ section.title }}</h1>
   {{ section.content | safe }}
+
+  <h2>Prochain concert</h2>
+  {% if next %}
+    <ul class="concert-list">{% set page = next %}{% include "partials/concert.html" %}</ul>
+    <p class="center"><a class="button" href="{{ get_url(path='concerts') }}">Tout l'agenda</a></p>
+  {% else %}
+    <p class="empty">Aucun concert programmé pour le moment. <a href="{{ get_url(path='concerts') }}">Voir l'agenda</a></p>
+  {% endif %}
 </section>
 {% endblock content %}

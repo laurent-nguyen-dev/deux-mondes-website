@@ -3,27 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
   <title>{% block title %}{{ config.title }}{% endblock title %}</title>
   <meta name="description" content="{{ config.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ config.title }}">
+  <meta property="og:description" content="{{ config.description }}">
+  <meta property="og:locale" content="fr_FR">
   <link rel="stylesheet" href="{{ get_url(path='css/style.css') }}">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="{{ get_url(path='js/main.js') }}" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <a href="{{ get_url(path='/') }}" class="logo">{{ config.title }}</a>
-    <nav>
-      <a href="{{ get_url(path='/') }}">Présentation</a>
-      <a href="{{ get_url(path='concerts') }}">Concerts</a>
-      <a href="{{ get_url(path='galerie') }}">Galerie</a>
-      <a href="{{ get_url(path='contact') }}">Contact</a>
-    </nav>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  {% set home = get_section(path="_index.md") %}
+  <header class="site-title">
+    <p class="eyebrow">Ensemble vocal · SATB · Baroque</p>
+    <p class="site-name"><a href="{{ get_url(path='/') }}">{{ config.title }}</a></p>
+    <p class="slogan">{{ home.extra.slogan }}</p>
   </header>
 
-  <main>
+  {% include "partials/garden.html" %}
+
+  <main id="contenu" class="panel" tabindex="-1">
+    <a class="back-top" href="#scene">↑ Les fleurs</a>
     {% block content %}{% endblock content %}
   </main>
 
   <footer class="site-footer">
-    <p>© {{ now() | date(format="%Y") }} {{ config.title }}</p>
+    <p class="fleuron" aria-hidden="true">❦</p>
+    <p><a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a></p>
+    <p>
+      <a href="{{ config.extra.facebook }}" rel="noopener">Facebook</a> ·
+      <a href="{{ config.extra.instagram }}" rel="noopener">Instagram</a> ·
+      <a href="{{ config.extra.youtube }}" rel="noopener">YouTube</a>
+    </p>
+    <p class="small">© {{ now() | date(format="%Y") }} {{ config.title }}</p>
   </footer>
 </body>
 </html>
